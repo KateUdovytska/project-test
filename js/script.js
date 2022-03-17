@@ -1,38 +1,37 @@
 "use strict";
-let number = 5;
-const leftBorderWidth = 1;
+/* Задание на урок:
+1) Создать переменную numberOfFilms и в неё поместить ответ от пользователя на вопрос:
+'Сколько фильмов вы уже посмотрели?'
+2) Создать объект personalMovieDB и в него поместить такие свойства:
+    - count - сюда передается ответ на первый вопрос
+    - movies - в это свойство поместить пустой объект
+    - actors - тоже поместить пустой объект
+    - genres - сюда поместить пустой массив
+    - privat - в это свойство поместить boolean(логическое) значение false
+3) Задайте пользователю по два раза вопросы:
+    - 'Один из последних просмотренных фильмов?'
+    - 'На сколько оцените его?'
+Ответы стоит поместить в отдельные переменные
+Записать ответы в объект movies в формате: 
+    movies: {
+        'logan': '8.1'
+    }
+Проверить, чтобы все работало без ошибок в консоли */
 
-let number2 = 4.6;
-const persone = 'Alex';
-const bool = true;
-
-const obj = {
-    name: "John",
-    age: 25,
-    isMarried: false
+const numberOfFilms = +prompt("Сколько фильмов вы уже посмотрели?");
+const personalMovieDB = {
+    count: numberOfFilms,
+    movies: {},
+    actors: {},
+    genres: [],
+    privat: false
 };
 
-console.log(obj.name);
+let a = prompt("Один из просмотренных фильов?");
+let b = prompt("На сколько оцените его?");
+let c = prompt("Один из просмотренных фильов?");
+let d = prompt("На сколько оцените его?");
 
-let arr = ['plum.png', 'orange.jpg', 6, 'apple.bmp'];
-console.log(arr[2]);
-
-
-// alert('Hello');
-// const result = confirm("Are you here?");
-// console.log(result);
-
-// const answer = prompt("Are you 18?", "18");
-// console.log(answer);
-
-// const answers = [];
-
-// answers[0] = prompt("What is your name", "");
-// answers[1] = prompt("What is your surame", "");
-// answers[2] = prompt("What is your age", "");
-
-// document.write(answers);
-
-const category = 'toys';
-
-console.log('https://someurl.com/'+ category);
+personalMovieDB.movies[a] = b;
+personalMovieDB.movies[c] = d;
+console.log(personalMovieDB);
