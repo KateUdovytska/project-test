@@ -1,76 +1,26 @@
-"use strict";
+/* Задания на урок:
 
-const personalMovieDB = {
-    count: 0,
-    movies: {},
-    actors: {},
-    genres: [],
-    privat: false,
+1) Удалить все рекламные блоки со страницы (правая часть сайта)
 
-    start: function(){
-        personalMovieDB.count = +prompt("Сколько фильмов вы уже посмотрели?");
+2) Изменить жанр фильма, поменять "комедия" на "драма"
 
-    while (personalMovieDB.count =='' || personalMovieDB.count == null || isNaN(personalMovieDB.count)){
-        personalMovieDB.count = +prompt("Сколько фильмов вы уже посмотрели?");
-    }
-    },
+3) Изменить задний фон постера с фильмом на изображение "bg.jpg". Оно лежит в папке img.
+Реализовать только при помощи JS
 
-    rememberMyFilms: function(){
-        for(let i = 0; i < 2; i++){
-            let a = prompt("Один из просмотренных фильмов?");
-            let b = prompt("На сколько оцените его?");
-        
-            if(a != null && b != null && a != '' && b !='' && a.length < 50){
-                personalMovieDB.movies[a] = b;
-            }else {
-                i--;
-            }
-        }
-    },
+4) Список фильмов на странице сформировать на основании данных из этого JS файла.
+Отсортировать их по алфавиту 
 
-    detectPersonalLevel: function(){
-        if (personalMovieDB.count < 10){
-        console.log("Просмотрено довольно мало фильмов");
-    }else if(personalMovieDB.count >= 10 && personalMovieDB.count < 30){
-        console.log("Вы классический зритель");
-    }else if(personalMovieDB.count <= 30){
-        console.log("Вы киноман");
-    }else{
-        console.log("Произошла ошибка");
-    }
-    },
+5) Добавить нумерацию выведенных фильмов */
 
-    showMyDB: function(hidden){
-        if(!hidden){
-            console.log(personalMovieDB);
-        }
-    },
+'use strict';
 
-    toggleVisibleMyDB: function(){
-        if(personalMovieDB.privat){
-            personalMovieDB.privat = false;
-        }else{
-            personalMovieDB.privat = true;
-        }
-    },
-
-    writeYourGenres: function(){
-        for(let i = 1; i <= 3; i++){
-            let genre = prompt(`Ваш любимый жанр под номером ${i}`);
-                if (genre != '' && genre != null){
-                    personalMovieDB.genres[i - 1] = genre;
-                }else{
-                    console.log("Data isn`t correct");
-                    i--;
-                }     
-        }
-
-        personalMovieDB.genres.forEach((item, i) => {
-            console.log(`Любимый жанр № ${i + 1} - это ${item}`);
-        });
-    }
+const movieDB = {
+    movies: [
+        "Логан",
+        "Лига справедливости",
+        "Ла-ла лэнд",
+        "Одержимость",
+        "Скотт Пилигрим против..."
+    ]
 };
-
-personalMovieDB.writeYourGenres();
-
 
